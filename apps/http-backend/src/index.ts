@@ -6,7 +6,8 @@ import { Middleware } from "./middleware";
 const app = express()
 
 app.post("/signup", function(req,res){
-
+    
+    //db-call
 })
 
 app.post("/signin", function(req,res){
@@ -20,5 +21,11 @@ app.post("/signin", function(req,res){
 })
 
 app.post("/room", Middleware,function(req,res){
+
+    //db-call
+    
+    res.json({
+        roomId:123,
+    })
 
 })
