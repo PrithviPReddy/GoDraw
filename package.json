@@ -16,5 +16,11 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "prisma": {
+    "schema": "packages/db/prisma/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.1.0"
   }
 }
