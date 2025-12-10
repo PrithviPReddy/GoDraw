@@ -89,7 +89,7 @@ app.post("/room", Middleware,async function(req,res){
     //@ts-ignore
     const userId = req.userId
 
-    await prismaclient.room.create({
+    const room = await prismaclient.room.create({
         data:{
             slug:parsedData.data.name,
             adminId:userId
@@ -97,7 +97,7 @@ app.post("/room", Middleware,async function(req,res){
     })
 
     res.json({
-        roomId:123,
+        roomId:room.id,
     })
 
 })
