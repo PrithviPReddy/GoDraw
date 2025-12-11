@@ -4,10 +4,12 @@ import { Middleware } from "./middleware";
 import { JWT_SECRET } from "@repo/backend-common/config";
 import { CreateRoomSchema, CreateUserSchema, SignInSchema } from "@repo/common/types"
 import { prismaclient } from "@repo/db/client"
+import cors from "cors"
 
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.post("/signup", async function(req,res){
 
@@ -108,9 +110,8 @@ app.post("/room", Middleware,async function(req,res){
 
 })
 
-app.post("/chat/:roomId", async function (req,res){
+app.get("/chat/:roomId", async function (req,res){
     const roomId  = req.body.roomId
-
     const message = await prismaclient.chat.findMany({
         where:{
             roomId:roomId
@@ -120,6 +121,22 @@ app.post("/chat/:roomId", async function (req,res){
         },
         take : 50
     })
+
+    res.json({
+        message
+    })
 })
 
+app.get("/room/:slug", async (req, res) => {
+    const slug = req.params.slug;
+    const room = await prismaclient.room.findFirst({
+        where: {
+            slug
+        }
+    });
+
+    res.json({
+        room
+    })
+})
 app.listen(3001);
