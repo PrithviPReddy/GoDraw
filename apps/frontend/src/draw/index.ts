@@ -128,7 +128,7 @@ export async function initDraw(canvas: HTMLCanvasElement,roomId:string,socket:We
                     centerY,
                     radiusX,
                     radiusY,
-                    0,               // rotation
+                    0,               
                     0,
                     Math.PI * 2
                 );

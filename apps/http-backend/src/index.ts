@@ -78,7 +78,6 @@ app.post("/signin", async function(req,res){
     res.json({
         token : token
     })
-
 })
 
 app.post("/room", Middleware,async function(req,res){
@@ -102,7 +101,7 @@ app.post("/room", Middleware,async function(req,res){
             }
         })
 
-        res.json({
+        res.status(200).json({
             roomId:room.id,
         })
 
@@ -140,15 +139,39 @@ app.get("/chats/:roomId", async (req, res) => {
 })
 
 app.get("/room/:slug", async (req, res) => {
-    const slug = req.params.slug;
+  try {
+    const { slug } = req.params;
+
+    if (!slug) {
+      return res.status(400).json({
+        message: "Room slug is required",
+      });
+    }
+
     const room = await prismaclient.room.findFirst({
-        where: {
-            slug
-        }
+      where: {
+        slug,
+      },
     });
 
-    res.json({
-        room
-    })
-})
+    if (!room) {
+      return res.status(404).json({
+        message: "Room not found",
+      });
+    }
+
+    return res.status(200).json({
+      room,
+    });
+  } catch (error) {
+    console.error("Error fetching room:", error);
+
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+});
+
+
+
 app.listen(3001);

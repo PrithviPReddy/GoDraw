@@ -13,12 +13,14 @@ export default function Canvas({roomId,socket} : {
     "rect" | "circle" | "pencil"
   >("rect");
     (window as any).selectedTool = selectedTool;
+    
 
     useEffect(() => {
         if (canvasRef.current){
             initDraw(canvasRef.current,roomId,socket)
-        }
-    },[canvasRef])
+          }
+        },[canvasRef,socket,roomId])
+        
 
 
 

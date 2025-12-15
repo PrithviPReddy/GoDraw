@@ -12,7 +12,7 @@ export function RoomCanvas({roomId}:{
 
         const canvasRef = useRef<HTMLCanvasElement>(null)
         const [socket, setSocket] = useState<WebSocket | null>(null)
-        const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYWMyMDJmNy1kNTFmLTRiMjktOGEyMy1jOWE1NTMxMTc3MDYiLCJpYXQiOjE3NjU2OTA1OTB9._hszaK0GFjw24_UH858UOvFzZdEC_Z6Bov8ITT9eqAg"
+        const TOKEN = localStorage.getItem("token")
         useEffect(() => {
             const ws = new WebSocket(`${WS_URL}?token=${TOKEN}`)
 
