@@ -4,7 +4,7 @@ GoDraw is a modern, scalable collaborative drawing application built using a mon
 
 The project leverages Next.js, TypeScript, Turborepo, and pnpm workspaces, making it suitable for large-scale frontend systems and collaborative platforms.
 
-# 🚀 Features
+# Features
 
 - Interactive canvas for drawing and diagramming
 - Modular monorepo architecture
@@ -14,7 +14,7 @@ The project leverages Next.js, TypeScript, Turborepo, and pnpm workspaces, makin
 - Scalable project structure for future real-time collaboration
 - ESLint and Prettier configured for consistent code quality
 
-# 🧱 Monorepo Architecture
+#  Monorepo Architecture
 
 The project is organized as a pnpm + Turborepo monorepo, enabling shared packages and faster builds.
 
@@ -37,7 +37,7 @@ GoDraw-main/
 └── README.md
 ```
 
-# 🛠 Tech Stack
+#  Tech Stack
 
 - Frontend: Next.js, React, TypeScript
 - Monorepo Tooling: Turborepo, pnpm
@@ -45,14 +45,14 @@ GoDraw-main/
 - Linting & Formatting: ESLint, Prettier
 - Database (Planned / Integrated): Prisma
 
-# ⚙️ Prerequisites
+#  Prerequisites
 
 Ensure the following are installed on your system:
 
 - Node.js >= 18
 - pnpm >= 9
 
-# 📦 Installation
+#  Installation
 
 Clone the repository:
 ```
@@ -70,7 +70,7 @@ Install dependencies:
 pnpm install
 ```
 
-# ▶️ Running the Project
+#  Running the Project
 
 # Development Mode
 ```
@@ -92,14 +92,14 @@ pnpm lint
 pnpm check-types
 ```
 
-# 🎯 Design Philosophy
+#  Design Philosophy
 
 - Scalability First: Designed to grow with additional apps and services
 - Code Reuse: Shared UI, configs, and tooling across applications
 - Performance: Incremental builds and caching via Turborepo
 - Maintainability: Strict typing and consistent linting
 
-# 🔮 Future Enhancements
+#  Future Enhancements
 
 - Real-time collaboration using WebSockets or WebRTC
 - Authentication and user sessions
@@ -107,10 +107,6 @@ pnpm check-types
 - Multiplayer cursors and presence indicators
 - Export to SVG / PNG / PDF
 
-# 👨‍💻 Author
-
-Prithvi Reddy
-
-# 📄 License
+#  License
 
 This project is currently intended for educational and experimental purposes. Licensing can be added as the project evolves.
