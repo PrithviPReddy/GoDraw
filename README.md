@@ -109,8 +109,7 @@ pnpm check-types
 
 # 👨‍💻 Author
 
-Prithvi Reddy
-Computer Science Student | Full-Stack & Systems Enthusiast
+## Prithvi Reddy
 
 # 📄 License
 
