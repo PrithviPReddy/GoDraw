@@ -109,7 +109,7 @@ pnpm check-types
 
 # 👨‍💻 Author
 
-## Prithvi Reddy
+Prithvi Reddy
 
 # 📄 License
 
